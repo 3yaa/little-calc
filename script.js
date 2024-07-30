@@ -14,6 +14,10 @@ const buttonsContainer = document.querySelector('.buttons');
 buttons.forEach(button => {
     const buttonElement = document.createElement('button');
     buttonElement.textContent = button;
+    if (button === '=') {
+        buttonElement.style.backgroundColor = 'rgb(39, 66, 145)';
+    }
+
     buttonElement.addEventListener('click', () => handleButtonClick(button));
     buttonElement.addEventListener('mouseenter', actionOnHover);
     buttonElement.addEventListener('mouseleave', actionOnLeave);
@@ -21,11 +25,19 @@ buttons.forEach(button => {
 });
 
 function actionOnHover(event) {
-    event.target.style.backgroundColor = '#1c232a';
+    if (event.target.textContent === '=') {
+        event.target.style.backgroundColor = 'rgb(35, 54, 111)';
+    } else {
+        event.target.style.backgroundColor = '#1c232a';
+    }
 }
 
 function actionOnLeave(event) {
-    event.target.style.backgroundColor = '#222b33';
+    if (event.target.textContent === '=') {
+        event.target.style.backgroundColor = 'rgb(39, 66, 145)';
+    } else {
+        event.target.style.backgroundColor = '#222b33';
+    }
 }
 
 let decimalExist = false;

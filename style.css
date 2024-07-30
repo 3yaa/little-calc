@@ -32,8 +32,7 @@ body {
 .buttons {
     display: flex;
     flex-wrap: wrap;
-    border: 8px solid #ffffff5d;
-    
+    border: 8px solid #ffffff5d;    
 }
 
 .buttons button {
